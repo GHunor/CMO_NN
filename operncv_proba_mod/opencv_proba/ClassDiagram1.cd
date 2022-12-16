@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DHubP" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAggAEAAABBAEABAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>glove_myo_simple_opencv.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataloggerS" Collapsed="true">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAQQCRwIWAKAAADBAAAIABABAQBBQgIAMCABAIAA=</HashCode>
+      <FileName>Datalogger.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataCollector" Collapsed="true">
+    <Position X="11.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBBgAAAAAAWEJEAABEHYAABAAGCABBAIQFAJBAIIAw=</HashCode>
+      <FileName>DataCollector.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpCV_handler" Collapsed="true">
+    <Position X="7.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBAgAAAAAAWEBAAABAEQAAAAAIAgBAAIAAAAAAEIAA=</HashCode>
+      <FileName>DataCollector.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="keypress_handler" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAMAAIIAAAABACAAQEAAAAABAAIAAIAA=</HashCode>
+      <FileName>keypress_handler.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="optoforce" Collapsed="true">
+    <Position X="11.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAgAAIAgAwAAAAAAAAAEAAAAAAAAEoAACAEAEAAA=</HashCode>
+      <FileName>optoforce.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="promthandler" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAACAAAAAAAAAAAAAAAAAIAAAAAAADAAAAAEAA=</HashCode>
+      <FileName>prompt_handler.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Timer" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAgAAAAAACAAAAAACAIAQAAAAMAQA=</HashCode>
+      <FileName>Timer.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
