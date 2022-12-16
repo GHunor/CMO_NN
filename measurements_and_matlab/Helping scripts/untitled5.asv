@@ -1,0 +1,6 @@
+function [fig] = CMO_plot(x, y, addendum, legend, xlim, ylim, title, xlabel, ylabel)
+%UNTITLED5 Summary of this function goes here
+%   Detailed explanation goes here
+f = figure(title)
+
+end
