@@ -1,0 +1,21 @@
+//1 MCP flexio
+//2 MCP flexio
+//3 MCP flexio
+//4 MCP flexio
+//1 MCP extensio
+//2 MCP extensio
+//3 MCP extensio
+//4 MCP extensio
+//1 PIP flexio
+//2 PIP flexio
+//3 PIP flexio
+//4 PIP flexio
+// ?thumb? oppositio
+// ?thumb? outwards
+// fist
+// spread fingers
+// wrist in
+// wrist outwards
+// twist lower arm
+// elbow
+// 1 abduction
