@@ -1,0 +1,111 @@
+function [eucLs, ouLs, data, prevTS1, prevTS2, prevTS3, prevTS4, guide, glv, myo, op1, op2, op3] = CMO_MeasProcOA(measdir, info, newdirec, measurement)
+%UNTITLED Summary of this function goes here
+%   Detailed explanation goes here
+Norm = @(x, xmm)( ...
+            (x(:, 2:end)-xmm(1,:))./(xmm(2,:)-xmm(1,:)) ...
+        );
+
+    T = info.glvTD;
+    bias = zeros(1,info.sensors+1);
+
+    newdir = join([newdirec, measurement{1}, '/']);
+    mkdir(newdir);
+    mkdir(join([newdir,'guide']));
+    mkdir(join([newdir,'glove']));
+    mkdir(join([newdir,'myo']));
+    mkdir(join([newdir,'optoforce1']));
+    mkdir(join([newdir,'optoforce2']));
+    mkdir(join([newdir,'optoforce3']));
+    data = [];
+    for i = 1:size(measurement{2}, 1)
+        data = [data;readmatrix(join([measdir,measurement{2}{i,4}]))];
+        display(measurement{2}{i,4})
+    end
+    % data = data(2:end, :);
+    starters(1:6) = data(1,[info.compT, info.glvINDt, info.myoINDt, info.op1INDt, info.op2INDt, info.op3INDt]);
+
+    % separate the sensors
+    split(measurement{2}{1,3}, '.');
+    
+    guide = data(:, [info.stateIND, info.movementIND, info.compT]);
+    %[guide] = CMO_only_change_timestamp(data(:, [info.stateIND, info.movementIND, info.compT]), [1,2], 3);
+    % normalise on min-max
+    glv = data(:, [info.glvINDt, info.glvIND]);
+    myo = data(:, [info.myoINDt, info.myoIND]);
+    op1 = data(:, [info.op1INDt, info.op1IND]);
+    op2 = data(:, [info.op2INDt, info.op2IND]);
+    op3 = data(:, [info.op3INDt, info.op3IND]);
+
+    prevTS1 = [guide(1,3), glv(1,1), myo(1,1), op1(1,1), op2(1,1), op3(1,1)];
+    prevTS2 = prevTS1;
+    prevTS4 = prevTS1;
+    prevVS = {guide(1,1:2), glv(1,2:end), myo(1, 2:end), op1(1, 2:end), op2(1, 2:end), op3(1,2:end)};
+
+    glv = glv(2:end, :);
+    myo = myo(2:end, :);
+    op1 = op1(2:end, :);
+    op2 = op2(2:end, :);
+    op3 = op3(2:end, :);
+
+    %From here it's almost the same
+
+    glv(:, 2:end) = Norm(glv, info.glvMM);
+    myo(:, 2:end) = Norm(myo, info.myoMM);
+    
+    %prevTS1(1:3) = [guide(end,3), glv(end,1), myo(end,1)];
+    guide(:,3) = guide(:,3) - starters(1);
+    glv(:,1) =  glv(:,1) - starters(2);
+    myo(:,1) =  myo(:,1) - starters(3);
+    %difference
+    prevTS3(1) = prevTS2(1) - starters(1);
+    prevTS3(2) = prevTS2(2) - starters(2);
+    prevTS3(3) = prevTS2(3) - starters(3);
+    prevTS3(4) = prevTS2(4) - starters(4);
+    prevTS3(5) = prevTS2(5) - starters(5);
+    prevTS3(6) = prevTS2(6) - starters(6);
+    prevTS4 = prevTS3;
+
+    COMP = [glv(:,1),glv(:,2:end),myo(:,2:end)];
+
+    [RS_DC, RS_TC] = CMO_Interp1Part(COMP(:,2:end), COMP(:,1), 1/T, [prevVS{2}, prevVS{3}], prevTS4(2));
+    RS_TC = RS_TC';
+    OUglv = [RS_TC, RS_DC(:,1:size(glv, 2)-1)];
+    OUmyo = [RS_TC, RS_DC(:,size(glv, 2):end)];
+    EUglv = [RS_TC, CMO_Metric_Euc(OUglv(:,2:end))];
+    EUmyo = [RS_TC, CMO_Metric_Euc(OUmyo(:,2:end))];
+
+    %prevVS{2} = OUglv(end, 2:end);
+    %prevVS{3} = OUmyo(end, 2:end);
+
+    %prevTS4(2) = OUglv(end, 1);
+    %prevTS4(3) = OUmyo(end, 1);
+
+        %                                                                    CMO_OptProc(opt, optMM,         Bias,    T, PreT1,      PreT3,      PreT4,      PreV,         Starter,        TypeSize )
+    [OUop1, EUop1, prevTS1(4), ~, ~, ~, bias(4)] = CMO_OptProc(op1, info.op1MM,    bias(4), T, prevTS1(4), prevTS3(4), prevTS4(4), prevVS{4},    starters(4));
+    [OUop2, EUop2, prevTS1(5), ~, ~, ~, bias(5)] = CMO_OptProc(op2, info.op2MM,    bias(5), T, prevTS1(5), prevTS3(4), prevTS4(4), prevVS{5},    starters(5));
+    [OUop3, EUop3, prevTS1(6), ~, ~, ~, bias(6)] = CMO_OptProc(op3, info.op3MM,    bias(6), T, prevTS1(6), prevTS3(4), prevTS4(4), prevVS{6},    starters(6));
+    %prevTS4(1) = guide(end,3);
+    %prevTS3(1:3) = [guide(end,3), glv(end,1), myo(end,1)];
+    prevVS{1} = guide(end,1:2);
+    % difference
+    eucLs{3} = EUop1;
+    eucLs{4} = EUop2;
+    eucLs{5} = EUop3;
+    eucLs{2} = EUmyo;
+    eucLs{1} = EUglv;
+    % until here
+
+    writematrix(guide,join([newdir,'guide/', measurement{2}{1,2}, '_', measurement{2}{1,3},'_gui.txt']) )
+    writematrix(OUglv,join([newdir,'glove/',measurement{2}{1,2}, '_', measurement{2}{1,3},'_glo.txt']) )
+    writematrix(OUmyo,join([newdir,'myo/',measurement{2}{1,2}, '_', measurement{2}{1,3},'_myo.txt']) )
+    writematrix(OUop1,join([newdir,'optoforce1/',measurement{2}{1,2}, '_', measurement{2}{1,3},'_opt1.txt']) )
+    writematrix(OUop2,join([newdir,'optoforce2/',measurement{2}{1,2}, '_', measurement{2}{1,3},'_opt2.txt']) )
+    writematrix(OUop3,join([newdir,'optoforce3/',measurement{2}{1,2}, '_', measurement{2}{1,3},'_opt3.txt']) )
+    
+    ouLs{1} = guide;
+    ouLs{2} = OUglv;
+    ouLs{3} = OUmyo;
+    ouLs{4} = OUop1;
+    ouLs{5} = OUop2;
+    ouLs{6} = OUop3;
+end

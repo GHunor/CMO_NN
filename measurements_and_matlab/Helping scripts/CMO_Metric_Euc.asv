@@ -1,0 +1,8 @@
+function [Data] = CMO_Metric_Euc(dataC)
+%CMO_Metric_Euc Euchlidian distance metric on the rows
+%   Detailed explanation goes here
+d
+Data = dataC.*dataC;
+Data = sum(Data, 1);
+Data = sqrt(Data);
+end

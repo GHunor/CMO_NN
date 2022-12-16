@@ -1,0 +1,29 @@
+function [ret] = CMO_ListCORRCheck(List, method)
+%UNTITLED4 Summary of this function goes here
+%   Detailed explanation goes here
+if nargin < 2
+    method = 'mean'
+end
+if strcmp(method,'mean')
+    Mean = @(x, l) (mean(x))
+end
+if strcmp(method,'weightedmean')
+    Mean = @(x, l) ( ...
+                    sum(x.*l) / (sum( ones(length(x), 1).*l) ) ...
+                    )
+end
+if strcmp(method,'minWmean')
+    Mean = @(x, l) ( ...
+                    sum( x.*(l/min(l))) / (sum( ones(length(x), 1).*(l/min(l))) ) ...
+                    )
+end
+x = [];
+l = [];
+for i = 1: length(List)
+    T = corrcoef(List{i}(:,1), List{i}(:,2))
+    x = [x; T(1,1)];
+    l = size(i, 1);
+end
+
+ret = mean(x, l);
+end

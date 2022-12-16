@@ -1,0 +1,13 @@
+function [RSdata, RStime] = CMO_ResmaplePart(data, dataT, fs,  Ldata, LdataT)
+%CMO_ResmaplePart Resamaples a data row part into uniform samplerate
+%   Detailed explanation goes here
+ if argin < 4
+     Ldata = data(end)
+ end
+ RSdata = resample([Ldata;data], [LdataT;dataT], fs);
+ T = 1/fs;
+ RStime = 0:size(Rsdata, 1);
+ RStime = RStime';
+ RStime = RStime.*T+LdataT;
+
+end
