@@ -1,0 +1,30 @@
+2_mcp_flexio
+Hajlítsd BE a MUTATÓ ujjad, de csak az MCP-t!
+3_mcp_flexio
+Hajlítsd BE a KÖZEPSŐ ujjad, de csak az MCP-t!
+4_mcp_flexio
+Hajlítsd BE a GYŰRŰS ujjad, de csak az MCP-t!
+5_mcp_flexio
+Hajlítsd BE a KIS ujjad, de csak az MCP-t!
+2_pip_flexio
+Hajlítsd BE a MUTATÓ ujjad, de csak az UJJPERCEKET!
+3_pip_flexio
+Hajlítsd BE a KÖZEPSŐ ujjad, de csak az UJJPERCEKET!
+4_pip_flexio
+Hajlítsd BE a GYŰRŰS ujjad, de csak az UJJPERCEKET!
+5_pip_flexio
+Hajlítsd BE a KIS ujjad, de csak az UJJPERCEKET!
+2 extensio
+Nyújsd KIFELÉ a MUTATO ujjad!
+3-4-5 extensio
+Nyújsd KIFELÉ a KOZEPSO, GYURUS és KIS ujjad!
+1_oppositio
+Hajlítsd BE a HÜVELYK ujjad, a tenyérrel SZEMBE!
+1_outwards
+Nyújsd KIFELÉ a HÜVELYK ujjad!
+fist
+Szorítsd ÖKÖLBE a kezed!
+spread_fingers
+Nyújsd SZÉT az ujjaid!
+spear
+FESZÍTSD meg a TENYERED!

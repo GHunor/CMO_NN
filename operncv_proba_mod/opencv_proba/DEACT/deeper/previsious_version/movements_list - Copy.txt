@@ -1,0 +1,30 @@
+2 MCP flexio
+Hajlitsd be a mutato ujjad, de csak az MCP-t!
+3 MCP flexio
+Hajlitsd be a kozepso ujjad, de csak az MCP-t!
+4 MCP flexio
+Hajlitsd be a gyurus ujjad, de csak az MCP-t!
+5 MCP flexio
+Hajlitsd be a kis ujjad, de csak az MCP-t!
+2 PIP flexio
+Hajlitsd be a mutato ujjad, de csak az ujjperceket!
+3 PIP flexio
+Hajlitsd be a kozepso ujjad, de csak az ujjperceket!
+4 PIP flexio
+Hajlitsd be a gyurus ujjad, de csak az ujjperceket!
+5 PIP flexio
+Hajlitsd be a kis ujjad, de csak az ujjperceket!
+2 extensio
+Nyujsd kifele a mutato ujjad!
+3-4-5 extensio
+Nyujsd kifele a kozepso, gyurus,kis ujjad!
+1 oppositio
+Hajlitsd be a huvelyk ujjad, a tenyerrel szembe!
+1 outwards
+Nyujsd kifele a huvelyk ujjad!
+fist
+Szoritsd okolbe a kezed
+spread fingers
+Nyusd szet az ujjaid
+spear
+Feszitsd meg a tenyered.
