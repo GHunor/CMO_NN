@@ -1,9 +1,14 @@
 # CMO_NN
 CMO project source codes
+
 Include:
+
 C++ based measurement manager
+
 Matlab based data preprocessor
+
 Keras based (Google Collab) neural network script
+
 
 Beware:
 
