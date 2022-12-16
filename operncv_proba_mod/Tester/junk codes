@@ -1,0 +1,53 @@
+#include <conio.h>
+#include <dir.h>
+#include <process.h>
+#include <stdio.h>
+#include <string>
+
+int main(){
+    int check;
+    std::string String = "../ttt/test";
+    const char *dirname = String.c_str();
+    //clrscr();
+    check = mkdir(dirname);
+    //checking if directory is created
+    if (!check)
+        printf("Directory created\n");
+    else {
+        printf("Unable to create directory\n");
+        exit(1);
+    }
+    getch();
+    system("dir/p");
+    getch();
+    return 0;
+}
+
+
+
+
+#include<conio.h>
+clrscr();
+
+
+
+if(iter==5200)
+COOR.Pause();
+
+if(GetKeyState('P') & 0x8000/*Check if high-order bit is set (1 << 15)*/ && pressed_P <1)
+{
+pressed_P++;
+COOR.Pause();
+}
+if(pressed_P<20 && pressed_P>0){pressed_P++;}
+if(pressed_P==20){pressed_P = 0;}
+int pressed_R = 0;
+if(GetKeyState('R') & 0x8000/*Check if high-order bit is set (1 << 15)*/ && pressed_R = 0; < 1)
+{
+pressed_R++;
+COOR.Repeat_last();
+}
+if(pressed_R<20 && pressed_R>0){pressed_R++;}
+if(pressed_R==20){pressed_R = 0;}
+
+sleep(25);

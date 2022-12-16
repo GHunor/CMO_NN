@@ -1,0 +1,80 @@
+//
+// Created by ghuno
+//
+#include <ctime>
+
+#ifndef SYSTIMER_H
+#define SYSTIMER_H
+
+
+	template <typename T>
+	void insertafter(std::list<T> List, Index, T Value){
+		int i=0;
+		for (std::list<T>::iterator IT = List.begin(); IT!=List.end(); IT++){
+			i++;
+			if (i == Index) List.insert(IT, Value);
+		}
+	}
+
+    struct coordinator{
+	
+	int max_state;
+	std::vector<std::string> movements;
+	std::list<int> statelist;
+	std::list<T>::iterator cur;
+	int empty_run, wait, movement_length, time_for_pause;
+	
+	
+	coordinator(){};
+	coordinator(char* name){
+		std::ifstream infile;
+        infile.open(name); //, std::ofstream::out);
+		bool l = false;
+		std::string temp, temp2;
+        while(getline(infile, temp) !=""){
+			if (l) {temp2 = temp; continue;}
+			temp2 = temp2 + "\n" + temp;
+			movements.push_back(temp2);
+		}
+        infile.close();
+		max_state = movements.size();
+	};
+	~coordinator(){};
+	void rhythim_setter(int emp, int w, int movlen, int paustime){
+		empty_run = emp; wait = w; movement_length = movlen; time_for_pause = paustime;
+	}
+	void reader(char* name){
+		std::ifstream infile;
+        infile.open(name); //, std::ofstream::out);
+		bool l = false;
+		std::string temp, temp2;
+        while(getline(infile, temp) !=""){
+			if (l) {temp2 = temp; continue;}
+			temp2 = temp2 + "\n" + temp;
+			movements.push_back(temp2);
+		}
+        infile.close();
+		max_state = movements.size();
+	}
+	void statelist_maker(){
+		srand((unsigned) time(0));
+		int RN, PN;
+		RN = rand() % (max_state);
+		PN = RN;
+		for (int i = 0; i<max_state*100; i++){
+			RN = rand() % (max_state-1);
+			if (RN >= PN) RN++;
+			statelist.push_back(RN);
+			PN = RN;
+		}
+		statelist.push_forward(-2);
+		for (int i = 0; i<max_state*100; i = i + ceil(time_for_pause/(movement_length+wait))){
+			insertafter(statelist, i, -1);
+			i++;
+		}
+	}
+	
+	int next_state(){return *(++cur);)
+	std::string message(int i){return movements[i];}
+	}
+#endif //SYSTIMER_H

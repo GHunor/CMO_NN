@@ -1,0 +1,28 @@
+2_mcp_flexio
+FOLD the MCP on your POINTING finger, but only the MCP!
+3_mcp_flexio
+FOLD the MCP on your MIDDLE finger IN, only the MCP!
+4-5_mcp_flexio
+FOLD the MCP on your RING and PINKY finger IN, only the MCP!
+2_pip_flexio
+FOLD the PIP/PHARANGEALS on your POINTING finger IN, but only the PIP/PHARANGEALS!
+3_pip_flexio
+FOLD the PIP/PHARANGEALSyour MIDDLE finger IN, but only the PIP/PHARANGEALS!
+4-5_pip_flexio
+FOLD the PIP/PHARANGEALSyour RING and PINKY finger IN, but only the PIP/PHARANGEALS!
+2_extensio
+EXTEND your POINTING finger!
+3_extensio
+EXTEND your MIDDLE finger!
+4-5 extensio
+EXTEND your RING and PINKY finger!
+1_oppositio
+FOLD IN yur THUMB!
+1_outwards
+EXTEND your THUMB OUT
+fist
+Make a FIST!
+spread_fingers
+SPREAD your fingers OUT!
+spear
+FLEX your FINGERS into a spear!
