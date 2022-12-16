@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Cpptester/Datalogger.hpp
+ostream
+-
+vector
+-
+fstream
+-
+direct.h
+-
+cstring
+-
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Cpptester/main.cpp
+iostream
+-
+string
+-
+Datalogger.hpp
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Cpptester/Datalogger.hpp
+

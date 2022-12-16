@@ -1,0 +1,15 @@
+Devices: {-M, -G, -O; -O1; -O2}
+Coms: [com name]
+InputT (-1, 0, n>0)
+Movement_list: [Movementlist.txt] {weigths}
+loops: (n)
+movement_time: (n)
+time_between_movements: (n)
+Special_Movement_list: [SpecMovList.txt] {weigths}
+movement_time: (n)
+time_after_movements: (n)
+Free_Movement_list: [FreeMovList.txt] {weigths}
+movement_time: (n)
+time_after_movements: (n)
+after_blocks: (n)
+Breather: (n) (h; m; s)
