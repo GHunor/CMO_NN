@@ -1,3 +1,0 @@
-C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Cpptester/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Cpptester/cmake-build-debug/CMakeFiles/Cpptester.dir
-C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Cpptester/cmake-build-debug/CMakeFiles/edit_cache.dir
