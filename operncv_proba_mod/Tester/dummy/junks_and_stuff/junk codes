@@ -1,0 +1,117 @@
+#include <conio.h>
+#include <dir.h>
+#include <process.h>
+#include <stdio.h>
+#include <string>
+
+int main(){
+    int check;
+    std::string String = "../ttt/test";
+    const char *dirname = String.c_str();
+    //clrscr();
+    check = mkdir(dirname);
+    //checking if directory is created
+    if (!check)
+        printf("Directory created\n");
+    else {
+        printf("Unable to create directory\n");
+        exit(1);
+    }
+    getch();
+    system("dir/p");
+    getch();
+    return 0;
+}
+
+
+
+
+#include<conio.h>
+clrscr();
+
+
+
+if(iter==5200)
+COOR.Pause();
+
+if(GetKeyState('P') & 0x8000/*Check if high-order bit is set (1 << 15)*/ && pressed_P <1)
+{
+pressed_P++;
+COOR.Pause();
+}
+if(pressed_P<20 && pressed_P>0){pressed_P++;}
+if(pressed_P==20){pressed_P = 0;}
+int pressed_R = 0;
+if(GetKeyState('R') & 0x8000/*Check if high-order bit is set (1 << 15)*/ && pressed_R = 0; < 1)
+{
+pressed_R++;
+COOR.Repeat_last();
+}
+if(pressed_R<20 && pressed_R>0){pressed_R++;}
+if(pressed_R==20){pressed_R = 0;}
+
+sleep(25);
+
+
+
+std::string strg = (*ret > 0 ? "positive" : "negative");
+
+
+
+///from main_serial
+std::ofstream file;
+file.open("log10000.txt");
+HANDLE hSerial1 = CreateHandleSerial("COM3", "Optoforce1");
+//HANDLE hSerial2 = CreateHandleSerial("COM4", "Optoforce2");
+
+DCB dcbSerialParams = CreateSerialPortParameterProfile(1000000);  //CBR_128000
+SetSerialPortParameters(hSerial1, dcbSerialParams);
+//SetSerialPortParameters(hSerial2, dcbSerialParams);
+SetSerialPortTimeOutProfile(hSerial1);
+//SetSerialPortTimeOutProfile(hSerial2);
+//func
+//func CheckHeader
+//func
+const int n = 16;
+char szBuff1[n + 1] = {0};
+//char szBuff12[n + 1] = {0};
+//char szBuff2[n + 1] = {0};
+//char szBuff22[n + 1] = {0};
+DWORD dwBytesRead = 0;
+
+//if(!ReadFile(hSerial1, szBuff1, n, &dwBytesRead, NULL)){
+//    std::cout<<"error occureed 2"<<std::endl;
+//error occurred. Report to user.
+//}
+//std::vector<int16_t> log;
+
+for(int i=0; i<60000; i++){
+Sleep(0.025);
+GetByteSeries(hSerial1, szBuff1, 16,dwBytesRead);
+int16_t temp[6] = {0};
+ExtractData(szBuff1,temp);
+ExtractSampleC(szBuff1, reinterpret_cast<uint16_t *>(&temp[3]));
+ExtractStatus(szBuff1, reinterpret_cast<uint16_t *>(&temp[4]));
+ExtractChecksum(szBuff1, reinterpret_cast<uint16_t *>(&temp[5]));
+file<<temp[0]<<"\t"<<temp[1]<<"\t"<<temp[2]<<"\t"<<(uint16_t )temp[3]<<"\t"<<(uint16_t )temp[4]<<"\t\t"<<(uint16_t )temp[5]<<"\t"<<
+((uint16_t )temp[3] + (uint16_t )temp[4] + temp[0] + temp[1] + temp[2] + 195)<<"\t\t"<<
+(uint16_t)szBuff1[0]<<"\t"<<(uint16_t)szBuff1[1]<<"\t"<<(uint16_t)szBuff1[2]<<"\t"<<(uint16_t)szBuff1[3]<<"\t"<<(uint16_t)szBuff1[4]<<"\t"<<(uint16_t)szBuff1[5]<<"\t"<<(uint16_t)szBuff1[6]<<"\t"<<(uint16_t)szBuff1[7]<<"\t"<<(uint16_t)szBuff1[8]<<"\t"<<(uint16_t)szBuff1[9]<<"\t"<<(uint16_t)szBuff1[10]<<"\t"<<(uint16_t)szBuff1[11]<<"\t"<<(uint16_t)szBuff1[12]<<"\t"<<(uint16_t)szBuff1[13]<<"\t"<<(uint16_t)szBuff1[14]<<"\t"<<(uint16_t)szBuff1[15]<<"\n";//<<temp[4]<<"\n";
+}
+
+/*
+std::cout<<":"<<+(uint8_t)szBuff1[0]<<"\n:"<<(int)szBuff1[1]<<"\n:"<<(int)szBuff1[2]<<"\n:"<<(int)szBuff1[3]<<"\n:"
+        <<(int)szBuff1[4]<<"\n:"<<(int)szBuff1[5]<<"\n:"<<(int)szBuff1[6]<<"\n:"<<(int)szBuff1[7]<<"\n:"
+        <<(int)szBuff1[8]<<"\n:"<<(int)szBuff1[9]<<"\n:"<<(int)szBuff1[10]<<"\n:"<<(int)szBuff1[11]<<"\n:"
+        <<(int)szBuff1[12]<<"\n:"<<(int)szBuff1[13]<<"\n:"<<(int)szBuff1[14]<<"\n:"<<(int)szBuff1[15]<<"\n";
+std::cout<<CheckHeader(szBuff1)<<std::endl;
+std::cout<<dwBytesRead<<std::endl;
+int16_t temp[5] = {0};
+ExtractData(szBuff1,temp);
+ExtractSampleC(szBuff1,&temp[3]);
+ExtractStatus(szBuff1,&temp[4]);
+
+std::cout<<"\n:"<<temp[0]<<"\n:"<<temp[1]<<"\n:"<<temp[2]<<"\n:"<<temp[3]<<"\n:"<<temp[4]<<"\n";
+*/
+CloseHandle(hSerial1);
+//CloseHandle(hSerial2);
+

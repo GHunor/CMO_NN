@@ -1,0 +1,4 @@
+"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\ghuno\OneDrive\Documents\Visual Studio 2008\Projects\opencv_proba_mod\Tester"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/cmake-build-debug

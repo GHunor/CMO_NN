@@ -1,0 +1,110 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/Datalogger.hpp
+ostream
+-
+vector
+-
+fstream
+-
+direct.h
+-
+cstring
+-
+sstream
+-
+fileapi.h
+-
+windows.h
+-
+tchar.h
+-
+stdio.h
+-
+strsafe.h
+-
+conio.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+unistd.h
+-
+stdlib.h
+-
+stdint.h
+-
+useful_macros.h
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/useful_macros.h
+Timer.hpp
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/Timer.hpp
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/Timer.hpp
+ctime
+-
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/coordinator.cpp
+fstream
+-
+cmath
+-
+coordinator.hpp
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/coordinator.hpp
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/coordinator.hpp
+list
+-
+named_vector.hpp
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/named_vector.hpp
+prompt_handler.hpp
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/prompt_handler.hpp
+keypress_handler.hpp
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/keypress_handler.hpp
+useful_macros.h
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/useful_macros.h
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/keypress_handler.hpp
+vector
+-
+map
+-
+set
+-
+useful_macros.h
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/useful_macros.h
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/main_promtandkey.cpp
+algorithm
+-
+prompt_handler.hpp
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/prompt_handler.hpp
+useful_macros.h
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/useful_macros.h
+keypress_handler.hpp
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/keypress_handler.hpp
+coordinator.cpp
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/coordinator.cpp
+Datalogger.hpp
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/Datalogger.hpp
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/named_vector.hpp
+map
+-
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/prompt_handler.hpp
+iostream
+-
+string
+-
+windows.h
+-
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/useful_macros.h
+

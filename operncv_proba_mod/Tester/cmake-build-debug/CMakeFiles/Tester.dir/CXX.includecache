@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/main_address.cpp
+iostream
+-
+fstream
+-
+vector
+-
+set
+-
+string
+-
+conio.h
+-
+dir.h
+-
+process.h
+-
+stdio.h
+-
+useful_macros.h
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/useful_macros.h
+
+C:/Users/ghuno/OneDrive/Documents/Visual Studio 2008/Projects/opencv_proba_mod/Tester/useful_macros.h
+

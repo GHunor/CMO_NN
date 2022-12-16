@@ -1,0 +1,5 @@
+1000 5 1 5000 30 2 6 20 600
+Prepare for movements! Calm your arm and hand down!
+Prepare for the next movement! Calm your arm and hand down!
+You are on break! Move naturally.
+You are on manual break! It will practically take forever, unless you stop it.
